@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "[Account-home directory check]"
+
 while IFS=: read -r username password uid gid gecos home shell; do
     # Checking if home directory doesn't exist and printing the account
     if [ ! -d "$home" ]; then

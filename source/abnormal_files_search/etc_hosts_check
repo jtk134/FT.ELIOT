@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "[/etc/hosts check]"
+
 # Check ownership of /etc/hosts file
 file="/etc/hosts"
 owner=$(stat -c "%U" "$file")

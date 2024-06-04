@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "[Home directory check]"
+
 # Read user account information from the /etc/passwd file
 cat /etc/passwd | while IFS=: read -r username password uid gid comment home shell
 do

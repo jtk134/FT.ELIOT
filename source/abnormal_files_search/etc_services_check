@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "[/etc/services check]"
+
 # Check ownership of /etc/services file
 file="/etc/services"
 owner=$(stat -c "%U" "$file")

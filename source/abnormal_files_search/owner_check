@@ -2,6 +2,7 @@
 
 echo "Files with no owner:"
 find / -nouser -print
+echo ""
 
 echo "Directories with no owner:"
 find / -nogroup -print

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "[/etc/syslog.conf check]"
+
 # Check ownership of /etc/syslog.conf file
 file="/etc/syslog.conf"
 owner=$(stat -c "%U" "$file")

@@ -1,6 +1,6 @@
-#!/bin/ash
+#!/bin/sh
 
-echo "Log messages with risk above warn"
+echo "Log messages with risk above warn:"
 
 echo "[emerg]"
 logread | grep -i 'emerg'

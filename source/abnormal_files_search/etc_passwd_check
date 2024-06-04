@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "[/etc/passwd check]"
+
 # Check ownership of /etc/passwd file
 file="/etc/passwd"
 owner=$(stat -c "%U" "$file")
