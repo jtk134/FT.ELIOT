@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Get the current PATH variable
+current_path="$PATH"
+
+# Check if PATH contains "." or "::"
+if [ "$(echo "$current_path" | grep -E '(^|:)\.(:|$)|::')" ]; then
+    echo "Warning: PATH contains '.' or '::'"
+else
+    echo "PATH is clean."
+fi

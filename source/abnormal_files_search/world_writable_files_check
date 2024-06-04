@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "[List for world writable files]"
+
+find / -type f -perm -2 -exec ls -l {} \;

@@ -1,0 +1,36 @@
+#!/bin/sh
+
+if [ "$1" = "-t" ]; then
+    echo "-------Timeline Anaysis-------"
+    ./timeline_analysis/timeline_analysis
+    echo "DONE"
+elif [ "$1" = "-l" ]; then
+    echo "---------Log Anaysis---------"
+    ./log_analysis/log_analysis
+    echo "DONE"
+elif [ "$1" = "-f" ]; then
+    echo "------Abnormal Files & Directories------"
+    ./abnormal_files_search/abnormal_files_search
+    echo "DONE"
+elif [ "$1" = "-a" ]; then
+    echo "-------Timeline Anaysis-------"
+    ./timeline_analysis/timeline_analysis
+    echo ""
+    echo "---------Log Anaysis---------"
+    ./log_analysis/log_analysis
+    echo ""
+    echo "------Abnormal Files & Directories------"
+    ./abnormal_files_search/abnormal_files_search
+    echo "DONE"
+else
+    echo "FT. ELIOT (Forensics Tool for Embedded Linux on IoT devices)"
+    echo ""
+    echo "Usage: ./ft_eliot [OPTIONS]"
+    echo ""
+    echo "Perform timeline analysis, log analysis, and abnormal file search on the device"
+    echo ""
+    echo "        -t      Timeline Analysis"
+    echo "        -l      Log Analysis"
+    echo "        -f      Abnormal Files & Directories Search"
+    echo "        -a      All tasks"
+fi

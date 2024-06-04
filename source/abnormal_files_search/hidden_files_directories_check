@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Check for hidden files
+echo "[Hidden files found]"
+find / -type f -name ".*"
+
+echo ""
+
+# Check for hidden directories
+echo "[Hidden directories found]"
+find / -type d -name ".*"

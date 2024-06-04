@@ -1,0 +1,23 @@
+#!/bin/ash
+
+echo "Log messages with risk above warn"
+
+echo "[emerg]"
+logread | grep -i 'emerg'
+echo ""
+
+echo "[alert]"
+logread | grep -i 'alert'
+echo ""
+
+echo "[crit]"
+logread | grep -i 'crit'
+echo ""
+
+echo "[err]"
+logread | grep -i 'err'
+echo ""
+
+echo "[warn]"
+logread | grep -i 'warn'
+echo ""

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "Files with no owner:"
+find / -nouser -print
+
+echo "Directories with no owner:"
+find / -nogroup -print

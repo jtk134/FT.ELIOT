@@ -1,0 +1,49 @@
+#!/bin/ash
+
+# Path to the log file
+LOG_FILE="/var/log/secure"
+
+echo "[ $LOG_FILE ]"
+#echo "Logs of when, where and what services were used for all connections"
+
+# Check if the log file exists
+if [ ! -f "$LOG_FILE" ]; then
+    echo "Log file does not exist: $LOG_FILE"
+    exit 1
+fi
+
+# Extract the time information from the last line of the log file
+LAST_LOG_TIME="$(tail -n 1 "$LOG_FILE" | awk '{print $1, $2, $3}')"
+if [ -z "$LAST_LOG_TIME" ]; then
+    echo "Unable to extract time from the log file."
+    exit 1
+fi
+
+# LAST_LOG_TIME=$(echo "$LAST_LOG_TIME" | tr -d ' ')
+echo "$LAST_LOG_TIME"
+
+# Extract the modify time of the log file
+MODIFY_TIME=$(stat -c %y "$LOG_FILE" | awk '{print substr($0, 1, 19)}')
+if [ -z "$MODIFY_TIME" ]; then
+    echo "Unable to extract the modify time of the log file."
+    exit 1
+fi
+
+# MODIFY_TIME="2024-05-05 12:00:00"
+
+MODIFY_TIME=$(date -d "$MODIFY_TIME" +"%s")
+MODIFY_TIME=$(date -u -d "@$MODIFY_TIME")
+# MODIFY_TIME=$(echo "$MODIFY_TIME" | tr -d ' ')
+echo "$MODIFY_TIME"
+
+# Compare the times
+MONTH=$(echo $LAST_LOG_TIME | cut -d ' ' -f 1)
+DAY=$(echo $LAST_LOG_TIME | cut -d ' ' -f 2)
+TIME=$(echo $LAST_LOG_TIME | cut -d ' ' -f 3)
+
+
+if [ "$MONTH" = $(echo $MODIFY_TIME | cut -d ' ' -f 2) ] && [ "$DAY" = $(echo $MODIFY_TIME | cut -d ' ' -f 3) ] && [ "$TIME" = $(echo $MODIFY_TIME | cut -d ' ' -f 4) ]; then
+    echo "The last log time and the modify time of the log file are the same."
+else
+    echo "The last log time and the modify time of the log file are different."
+fi

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Check ownership of /etc/rsyslog.conf file
+file="/etc/rsyslog.conf"
+owner=$(stat -c "%U" "$file")
+
+# Check if owner is not root(or bin, sys)
+if [ "$owner" != "root" ] && [ "$owner" != "bin" ] && [ "$owner" != "sys" ]; then
+    echo "Warning: /etc/rsyslog.conf file owner is not root(or bin, sys)!"
+fi
+
+# Check permissions of /etc/rsyslog.conf file
+permission=$(stat -c "%a" "$file")
+
+# Check if permission is not 644 or less
+if [ "$permission" -gt 644 ]; then
+    echo "Warning: /etc/rsyslog.conf file permission is not 644 or less!"
+fi

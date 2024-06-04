@@ -1,0 +1,7 @@
+#!/bin/sh
+
+./logread
+echo ""
+
+./logs_for_connections
+echo ""

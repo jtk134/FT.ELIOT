@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Check ownership of /etc/passwd file
+file="/etc/passwd"
+owner=$(stat -c "%U" "$file")
+
+# Check if owner is not root
+if [ "$owner" != "root" ]; then
+    echo "Warning: /etc/passwd file owner is not root!"
+fi
+
+# Check permissions of /etc/passwd file
+permission=$(stat -c "%a" "$file")
+
+# Check if permission is not 644 or less
+if [ "$permission" -gt 644 ]; then
+    echo "Warning: /etc/passwd file permission is not 644 or less!"
+fi

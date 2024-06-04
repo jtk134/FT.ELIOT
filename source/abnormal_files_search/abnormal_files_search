@@ -1,0 +1,32 @@
+#!/bin/sh
+
+./path_check
+echo ""
+./owner_check
+echo ""
+./etc_passwd_check
+echo ""
+./etc_shadow_check
+echo ""
+./etc_hosts_check
+echo ""
+./etc_syslog_conf_check
+echo ""
+./etc_rsyslog_conf_check
+echo ""
+./etc_services_check
+echo ""
+./suid_sgid_check
+echo ""
+./world_writable_files_check
+echo ""
+./device_files_check
+echo ""
+./umask_check
+echo ""
+./home_directory_check
+echo ""
+#./account_home_directory_check
+#echo ""
+./hidden_files_directories_check
+echo ""

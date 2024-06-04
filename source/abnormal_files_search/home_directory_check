@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Read user account information from the /etc/passwd file
+cat /etc/passwd | while IFS=: read -r username password uid gid comment home shell
+do
+    # Check if the home directory exists
+    if [ -d "$home" ]; then
+        # Check the owner of the home directory
+        owner=$(stat -c '%U' "$home")
+        if [ "$owner" != "$username" ]; then
+            echo "The home directory '$home' for user '$username' is owned by $owner."
+        fi
+
+        # Check the permissions of the home directory (if others have write permission)
+        perms=$(stat -c '%A' "$home")
+        if echo "$perms" | grep -q 'w'; then
+            echo "The home directory '$home' for user '$username' has write permissions for others. (Permissions: $perm>        fi
+    else
+        echo "The home directory '$home' for user '$username' does not exist."
+    fi
+done

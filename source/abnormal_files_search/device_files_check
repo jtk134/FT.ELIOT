@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "[List for device files in /dev]"
+
+find /dev -type f -exec ls -l {} \;

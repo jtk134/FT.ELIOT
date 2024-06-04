@@ -1,0 +1,8 @@
+#!/bin/sh
+
+while IFS=: read -r username password uid gid gecos home shell; do
+    # Checking if home directory doesn't exist and printing the account
+    if [ ! -d "$home" ]; then
+        echo "Account with non-existent home directory: $username (Home directory: $home)"
+    fi
+done < /etc/passwd
