@@ -4,7 +4,6 @@
 
 # Boot problem
 echo "[Messages to see in the log at boot time (dmesg)]"
-dmesg | grep -E -i "error|critical|warning|fail|panic|segfault|call trace|oom|fault|not" | grep
- -viE "default|notice"
+dmesg | grep -E -i "error|critical|warning|fail|panic|segfault|call trace|oom|fault|not" | grep -viE "default|notice"
 
 echo ""
