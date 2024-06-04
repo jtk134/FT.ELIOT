@@ -1,26 +1,26 @@
 #!/bin/sh
 
 if [ "$1" = "-t" ]; then
-    echo "-------Timeline Anaysis-------"
-    ./timeline_analysis/timeline_analysis
+    echo "-------Timeline Analysis-------"
+    ./option_t
     echo "DONE"
 elif [ "$1" = "-l" ]; then
-    echo "---------Log Anaysis---------"
-    ./log_analysis/log_analysis
+    echo "---------Log Analysis---------"
+    ./option_l
     echo "DONE"
 elif [ "$1" = "-f" ]; then
     echo "------Abnormal Files & Directories------"
-    ./abnormal_files_search/abnormal_files_search
+    ./option_f
     echo "DONE"
 elif [ "$1" = "-a" ]; then
-    echo "-------Timeline Anaysis-------"
-    ./timeline_analysis/timeline_analysis
+    echo "-------Timeline Analysis-------"
+    ./option_t
     echo ""
-    echo "---------Log Anaysis---------"
-    ./log_analysis/log_analysis
+    echo "---------Log Analysis---------"
+    ./option_l
     echo ""
     echo "------Abnormal Files & Directories------"
-    ./abnormal_files_search/abnormal_files_search
+    ./option_f
     echo "DONE"
 else
     echo "FT. ELIOT (Forensics Tool for Embedded Linux on IoT devices)"

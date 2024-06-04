@@ -1,0 +1,32 @@
+#!/bin/sh
+
+./abnormal_files_search/path_check
+echo ""
+./abnormal_files_search/owner_check
+echo ""
+./abnormal_files_search/etc_passwd_check
+echo ""
+./abnormal_files_search/etc_shadow_check
+echo ""
+./abnormal_files_search/etc_hosts_check
+echo ""
+./abnormal_files_search/etc_syslog_conf_check
+echo ""
+./abnormal_files_search/etc_rsyslog_conf_check
+echo ""
+./abnormal_files_search/etc_services_check
+echo ""
+./abnormal_files_search/suid_sgid_check
+echo ""
+./abnormal_files_search/world_writable_files_check
+echo ""
+./abnormal_files_search/device_files_check
+echo ""
+./abnormal_files_search/umask_check
+echo ""
+./abnormal_files_search/home_directory_check
+echo ""
+#./abnormal_files_search/account_home_directory_check
+#echo ""
+./abnormal_files_search/hidden_files_directories_check
+echo ""

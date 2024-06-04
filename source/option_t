@@ -1,0 +1,19 @@
+#!/bin/sh
+
+./timeline_analysis/var_log_boot_log
+echo ""
+
+./timeline_analysis/var_log_kern_log
+echo ""
+
+./timeline_analysis/var_log_messages
+echo ""
+
+./timeline_analysis/var_log_secure
+echo ""
+
+./timeline_analysis/var_log_cron
+echo ""
+
+./timeline_analysis/var_log_maillog
+echo ""

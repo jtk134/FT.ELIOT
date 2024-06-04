@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "[UMASK check]"
+
 # Check if UMASK is set to 022 in /etc/profile
 if grep -q "^UMASK[[:space:]]*022" /etc/profile; then
     echo "UMASK is set to 022 in /etc/profile."

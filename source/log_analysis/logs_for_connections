@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "[Logs for connections]"
+echo "Logs for connections:"
 echo "[logread]"
 logread | grep -i 'connection'
 echo ""
@@ -8,6 +8,7 @@ echo ""
 # lastlog
 echo "[lastlog]"
 lastlog
+echo ""
 
 # /var/log/secure
 echo "[/var/log/secure]"

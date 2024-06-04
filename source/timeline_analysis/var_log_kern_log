@@ -20,7 +20,7 @@ if [ -z "$LAST_LOG_TIME" ]; then
 fi
 
 # LAST_LOG_TIME=$(echo "$LAST_LOG_TIME" | tr -d ' ')
-echo "$LAST_LOG_TIME"
+echo "Last log Time: $LAST_LOG_TIME"
 
 # Extract the modify time of the log file
 MODIFY_TIME=$(stat -c %y "$LOG_FILE" | awk '{print substr($0, 1, 19)}')
@@ -34,7 +34,7 @@ fi
 MODIFY_TIME=$(date -d "$MODIFY_TIME" +"%s")
 MODIFY_TIME=$(date -u -d "@$MODIFY_TIME")
 # MODIFY_TIME=$(echo "$MODIFY_TIME" | tr -d ' ')
-echo "$MODIFY_TIME"
+echo "Modify Time: $MODIFY_TIME"
 
 # Compare the times
 MONTH=$(echo $LAST_LOG_TIME | cut -d ' ' -f 1)

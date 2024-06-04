@@ -1,0 +1,10 @@
+#!/bin/sh
+
+./log_analysis/dmesg
+echo ""
+
+./log_analysis/logread
+echo ""
+
+./log_analysis/logs_for_connections
+echo ""
