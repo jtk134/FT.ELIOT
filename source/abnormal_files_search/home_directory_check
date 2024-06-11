@@ -16,7 +16,8 @@ do
         # Check the permissions of the home directory (if others have write permission)
         perms=$(stat -c '%A' "$home")
         if echo "$perms" | grep -q 'w'; then
-            echo "The home directory '$home' for user '$username' has write permissions for others. (Permissions: $perm>        fi
+            echo "The home directory '$home' for user '$username' has write permissions for others. (Permissions: $perms)"
+        fi
     else
         echo "The home directory '$home' for user '$username' does not exist."
     fi
