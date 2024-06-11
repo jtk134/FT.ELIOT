@@ -1,0 +1,80 @@
+# If ft_eliot_auto is operated, 
+# the text file is stored in this folder in the following format.
+
+Wed Jun 12 01:53:11 KST 2024
+
+-------Timeline Analysis-------
+[ /var/log/boot.log ]
+
+[ /var/log/kern.log ]
+
+[ /var/log/messages ]
+
+[ /var/log/secure ]
+
+[ /var/log/cron ]
+
+[ /var/log/maillog ]
+
+
+---------Log Analysis---------
+[Messages to see in the log at boot time (dmesg)]
+
+Log messages with risk above warn:
+[emerg]
+
+[alert]
+
+[crit]
+
+[err]
+
+[warn]
+
+
+Logs for connections:
+[logread]
+
+[lastlog]
+Username         Port     From             Latest
+
+
+[/var/log/secure]
+
+
+------Abnormal Files & Directories------
+[PATH check]
+No problem
+
+Files with no owner:
+
+Directories with no owner:
+
+
+[/etc/passwd check]
+
+[/etc/shadow check]
+
+[/etc/hosts check]
+
+[/etc/syslog.conf check]
+
+[/etc/rsyslog.conf check]
+
+[/etc/services check]
+
+[List for files with SUID or SGID bits set]
+
+[List for world writable files]
+
+[List for device files in /dev]
+
+[UMASK check]
+
+[Home directory check]
+
+[Hidden files found]
+
+[Hidden directories found]
+
+DONE

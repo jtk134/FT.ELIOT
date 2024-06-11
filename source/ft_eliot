@@ -1,18 +1,26 @@
 #!/bin/sh
 
 if [ "$1" = "-t" ]; then
+    date
+    echo ""
     echo "-------Timeline Analysis-------"
     ./option_t
     echo "DONE"
 elif [ "$1" = "-l" ]; then
+    date
+    echo ""
     echo "---------Log Analysis---------"
     ./option_l
     echo "DONE"
 elif [ "$1" = "-f" ]; then
+    date
+    echo ""
     echo "------Abnormal Files & Directories------"
     ./option_f
     echo "DONE"
 elif [ "$1" = "-a" ]; then
+    date
+    echo ""
     echo "-------Timeline Analysis-------"
     ./option_t
     echo ""

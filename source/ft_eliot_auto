@@ -1,0 +1,10 @@
+#!/bin/sh
+
+filename=$(date +"%Y-%m-%d_%H-%M-%S").txt
+
+# You can change the option to something else(-t, -l, -f, -a).
+./ft_eliot -a > ./result/"$filename"
+
+# If you want to transfer the file through a method other than ftp, you can modify this part
+# Enter the appropriate values for (ip_address, port, user, password)
+curl -T ./result/"$filename" ftp://ip_address:port/ --user user:password
